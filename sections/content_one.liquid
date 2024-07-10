@@ -19,3 +19,23 @@
   <div class="flex justify-center w-full py-[173px] relative z-10 md:hidden">{% render 'm-content-1' %}</div>
   <div class="hidden justify-center w-full py-[240px] relative z-10 md:flex">{% render 'd-content-1' %}</div>
 </section>
+
+
+{% schema %}
+{
+    "name": "Content One",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default":"Content One",
+            "label": "Title"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Content One"
+        }
+    ]
+}
+{% endschema %}
