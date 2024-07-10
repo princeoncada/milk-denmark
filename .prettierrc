@@ -1,11 +1,12 @@
 {
     "plugins": ["@shopify/prettier-plugin-liquid"],
-    "printWidth": 80,
+    "printWidth": 600,
     "tabWidth": 4,
     "useTabs": true,
-  
+    "bracketSameLine": true,
     "singleQuote": true,
     "trailingComma": "none",
-
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "singleAttributePerLine": false
+    
   }
