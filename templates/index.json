@@ -1,47 +1,62 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-        "featured-collection": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "all"
-            }
-        },
-        "hero": {
-            "type": "hero",
-            "settings": {
-                "hero": "all"
-            }
-        },
-        "content-one": {
-            "type": "content-one",
-            "settings": {
-                "content_one": "all"
-            }
-        },
-        "content-two": {
-            "type": "content-two",
-            "settings": {
-                "content_two": "all"
-            }
-        },
-        "content-three": {
-            "type": "content-three",
-            "settings": {
-                "content_three": "all"
-            }
-        },
-        "collections": {
-            "type": "collections",
-            "settings": {
-                "collections": "all"
-            }
-        },
-        "call-to-action": {
-            "type": "call-to-action",
-            "settings": {
-                "call_to_action": "all"
-            }
-        }
-    }, 
-    "order": ["hero", "content-one", "content-two", "collections", "content-three", "featured-collection", "call-to-action"]
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Hero"
+      }
+    },
+    "content-one": {
+      "type": "content-one",
+      "settings": {
+        "title": "Content One"
+      }
+    },
+    "content-two": {
+      "type": "content-two",
+      "settings": {
+      }
+    },
+    "collections": {
+      "type": "collections",
+      "settings": {
+      }
+    },
+    "content-three": {
+      "type": "content-three",
+      "settings": {
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "best-sellers",
+        "number_of_products_to_show": 4
+      }
+    },
+    "call-to-action": {
+      "type": "call-to-action",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "content-one",
+    "content-two",
+    "collections",
+    "content-three",
+    "featured-collection",
+    "call-to-action"
+  ]
 }
