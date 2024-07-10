@@ -1,0 +1,47 @@
+{
+    "sections": {
+        "featured-collection": {
+            "type": "featured-collection",
+            "settings": {
+                "featured_collection": "all"
+            }
+        },
+        "hero": {
+            "type": "hero",
+            "settings": {
+                "hero": "all"
+            }
+        },
+        "content-one": {
+            "type": "content-one",
+            "settings": {
+                "content_one": "all"
+            }
+        },
+        "content-two": {
+            "type": "content-two",
+            "settings": {
+                "content_two": "all"
+            }
+        },
+        "content-three": {
+            "type": "content-three",
+            "settings": {
+                "content_three": "all"
+            }
+        },
+        "collections": {
+            "type": "collections",
+            "settings": {
+                "collections": "all"
+            }
+        },
+        "call-to-action": {
+            "type": "call-to-action",
+            "settings": {
+                "call_to_action": "all"
+            }
+        }
+    }, 
+    "order": ["hero", "content-one", "content-two", "collections", "content-three", "featured-collection", "call-to-action"]
+}
