@@ -11,7 +11,7 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'stylesheet.css' |  asset_url | stylesheet_tag }}
+    {{ 'stylesheet.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
@@ -22,14 +22,76 @@
 
 </head>
 
-<body class="bg-gray-100 nanum-myeongjo-regular">
-    <div class=" container mx-auto max-w-[1280px]">
-        {% section 'header' %}
-        <main role="main">
-            {{ content_for_layout }}
-        </main>
-        {% section 'footer' %}
-    </div>
+<body class="bg-gray-100 nanum-myeongjo-regular relative">
+
+    <header x-data="{ open: false }" class="md:hidden sticky top-0 z-50">
+        <div class="flex flex-row justify-between items-center w-full py-[30px] bg-[#F6F0E4] z-50">
+            <button @click="open=!open" class="pl-[20px] flex flex-col gap-1 relative z-50">
+                <div x-bind:class="open ? 'rotate-45 translate-y-1.5' : ''"
+                    class="bg-[#4F4F4F] w-5 h-0.5 transition-all ease-in-out duration-300 z-0"></div>
+                <div x-bind:class="open ? 'w-0' : 'w-5'"
+                    class="bg-[#4F4F4F] h-0.5 transition-all ease-in-out duration-300">
+                </div>
+                <div x-bind:class="open ? '-rotate-45 -translate-y-1.5' : ''"
+                    class="bg-[#4F4F4F] w-5 h-0.5 transition-all ease-in-out duration-300"></div>
+            </button>
+            <div class="absolute flex justify-center items-center w-full z-40">
+                <a href="/" class="fill-black">
+                    {% render 'logo-milk-denmark' %}
+                </a>
+            </div>
+            <div class="flex flex-row gap-3 pr-[20px] z-40">
+                <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+                    {% render 'icon-shopping-bag' %}
+                </a>
+                <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">
+                    {% render 'icon-search' -%}
+                </a>
+            </div>
+        </div>
+
+        <menu x-bind:class='open ? "translate-y-[0%]" : ""'
+            class="md:hidden flex fixed -z-10 bg-[#e7d7b6] w-full -translate-y-[100%] transition-all ease-in-out duration-300 flex-col p-4">
+            {% for link in linklists['main-menu'].links %}
+                <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+        </menu>
+    </header>
+
+    <header class="flex flex-col bg-[#F6F0E4] items-center w-full sticky top-[0px]">
+        <div
+            class="hidden md:flex flex-row justify-between items-center w-full px-[104px] py-[28px] z-50 max-w-[1280px]">
+            <div>
+                <a href="/">
+                    {% render 'logo-milk-denmark-large' %}
+                </a>
+            </div>
+            <div class="font-default font-bold text-[#282828] flex flex-row gap-[20px]">
+                {% for link in linklists['main-menu'].links %}
+
+                <a href="{{ link.url }}">{{ link.title }}</a>
+
+                {% endfor %}
+                {% comment %} <a href="">Shop by Collections</a>
+                <a href="">Origins</a>
+                <a href="">Wholesale</a>
+                <a href="">Contact</a> {% endcomment %}
+            </div>
+            <div class="flex flex-row gap-[20px]">
+                <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+                    {% render 'icon-shopping-bag' %}
+                </a>
+                <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">
+                    {% render 'icon-user' -%}
+                </a>
+                <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">
+                    {% render 'icon-search' -%}
+                </a>
+            </div>
+        </div>
+    </header>
+    {{ content_for_layout }}
+    {% section 'footer' %}
 </body>
 
 </html>
