@@ -1,4 +1,4 @@
-<div class='w-full py-6 px-3 relative -z-10'>
+<div class='w-full py-6 px-3'>
 	<div class='border bg-white shadow-lg rounded-lg overflow-hidden'>
 		<a href='{{ product_product.url }}'>
 			{% if product_product.featured_image %}
@@ -6,38 +6,33 @@
 					<img
 						class='w-full h-full object-cover transition duration-1000 ease-in-out hover:scale-105 transform'
 						src='{{ product_product.featured_image | image_url: width: 1000, height: 1000 }}'
-						alt='{{ product_product.featured_image.alt }}'
-					>
+						alt='{{ product_product.featured_image.alt }}'>
 				</div>
 
 			{% else %}
-				{{
-					'product-1'
-					| placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100'
-				}}
+				{{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}
 			{% endif %}
 		</a>
 
 		<div class='flex flex-col p-4'>
-			<span class='text-sm text-gray-400'>
-				{{- product_product.vendor -}}
-			</span>
-
 			<a
 				href='{{ product_product.url }}'
-				class='text-gray-700 uppercase font-medium'
-			>
-				{{- product_product.title -}}
+				class='text-gray-700 font-medium'>
 			</a>
+			{% assign first_variant = product_product.variants.first %}
+			<p>
+				{{- product_product.title -}}
+				- {{ first_variant.price | money_without_currency | remove: '.00' }} USD
+			</p>
 
-			{% for variant in product_product.variants %}
+			{% if product_product.variants.size > 1 %}
+				{% assign second_variant = product_product.variants[1] %}
+
 				<p>
-					Variant: {{ variant.title }} - {{ variant.price | money }}
+					{{- second_variant.title -}}
+					- {{ second_variant.price | money_without_currency | remove: '.00' }} USD
 				</p>
-				{% unless variant.available -%}
-					<strong>Sold Out</strong>
-				{%- endunless %}
-			{% endfor %}
+			{% endif %}
 		</div>
 	</div>
 </div>
