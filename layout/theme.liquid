@@ -24,13 +24,9 @@
     <div class=" container mx-auto max-w-[1280px]">
         {% section 'header' %}
         <main role="main">
-            {% section 'hero' %}
-            {% section 'content_one' %}
-            {% section 'content_two' %}
-            {% section 'test-product' %}
             {{ content_for_layout }}
 
-            {% comment %} {% section 'footer' %} {% endcomment %}
+            {% section 'footer' %}
         </main>
     </div>
 </body>
