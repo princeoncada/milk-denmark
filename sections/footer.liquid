@@ -5,29 +5,59 @@
         <div class="flex flex-row gap-10">
             <div class="flex flex-col gap-4 w-[106px]">
                 <h1 class="text-xl font-medium font-causten leading-6">SHOP</h1>
-                <a href="" class="text-lg font-semibold leading-6">By Collection</a>
-                <a href="" class="text-lg font-semibold leading-6">By Color</a>
-                <a href="" class="text-lg font-semibold leading-6">By Style</a>
+                {% for link in linklists['footer-shop'].links %}
+                    <a
+                        href='{{ link.url }}'
+                        class='text-lg font-semibold leading-6'>
+                        {{ link.title }}
+                    </a>
+                {% endfor %}
             </div>
             <div class="flex flex-col gap-4">
                 <h1 class="text-xl font-medium font-causten leading-6">USERS</h1>
-                <a href="" class="text-lg font-semibold leading-6">Account</a>
-                <a href="" class="text-lg font-semibold leading-6">Orders</a>
-                <a href="" class="text-lg font-semibold leading-6">Saved</a>
+                {% for link in linklists['footer-users'].links %}
+					<a
+						href='{{ link.url }}'
+						class='text-lg font-semibold leading-6'>
+						{{ link.title }}
+					</a>
+				{% endfor %}
             </div>
         </div>
         <div class="flex flex-row gap-10">
             <div class="flex flex-col gap-4 w-[106px]">
                 <h1 class="text-xl font-medium font-causten leading-6">COMPANY</h1>
-                <a href="" class="text-lg font-semibold leading-6">About</a>
-                <a href="" class="text-lg font-semibold leading-6">Contact</a>
-                <a href="" class="text-lg font-semibold leading-6">Terms</a>
+                {% for link in linklists['footer-company'].links %}
+					<a
+						href='{{ link.url }}'
+						class='text-lg font-semibold leading-6'>
+						{{ link.title }}
+					</a>
+				{% endfor %}
+
+				{% assign terms = linklists.footer.links.first %}
+				<a
+					href='{{ terms.url }}'
+					class='text-lg font-semibold leading-6'>
+					{{ terms.title }}
+				</a>
             </div>
             <div class="flex flex-col gap-4 justify-end">
-                <a href="" class="text-lg font-semibold leading-6">Privacy</a>
-                <a href="" class="text-lg font-semibold leading-6">Return Policy</a>
-                <a href="" class="text-3xl font-semibold leading-6 -my-[3px] -ml-[3px]"><i
-                        class='bx bxl-instagram'></i></a>
+                {% for link in linklists.footer.links %}
+					{% if link.title != 'Terms' %}
+						<a
+							href='{{ link.url }}'
+							class='text-lg font-semibold leading-6'>
+							{{ link.title }}
+						</a>
+					{% endif %}
+				{% endfor %}
+
+				<a
+					href=''
+					class='text-3xl font-semibold leading-6 -my-[3px] -ml-[3px]'>
+					<i class='bx bxl-instagram'></i>
+				</a>
             </div>
         </div>
         <div class="bg-[#F6F0E4] h-[1px] w-full"></div>
@@ -48,9 +78,11 @@
                     © 2024 Milk DENMARK. All rights reserved.
                 </div>
                 <div class="flex flex-row gap-4 text-sm leading-5">
-                    <a href="">Terms</a>
-                    <a href="">Privacy</a>
-                    <a href="">Return Policy</a>
+                    {% for link in linklists.footer.links %}
+                        <a href='{{ link.url }}'>
+                            {{- link.title -}}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -58,73 +90,38 @@
             <div class="flex flex-col gap-4">
                 <h1 class="font-causten leading-6">SHOP</h1>
                 <div class="flex flex-col gap-2">
-                    <a href="" class="leading-6">By Collection</a>
-                    <a href="" class="leading-6">By Color</a>
-                    <a href="" class="leading-6">By Style</a>
+                    {% for link in linklists['footer-shop'].links %}
+                        <a href='{{ link.url }}'>
+                            {{- link.title -}}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="flex flex-col gap-4">
                 <h1 class="font-causten leading-6">USERS</h1>
                 <div class="flex flex-col gap-2">
-                    <a href="" class="leading-6">Account</a>
-                    <a href="" class="leading-6">Orders</a>
-                    <a href="" class="leading-6">Saved</a>
+                    {% for link in linklists['footer-users'].links %}
+                        <a href='{{ link.url }}'>
+                            {{- link.title -}}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="flex flex-col gap-4">
                 <h1 class="font-causten leading-6">COMPANY</h1>
                 <div class="flex flex-col gap-2">
-                    <a href="" class="leading-6">About</a>
-                    <a href="" class="leading-6">Contact</a>
-                    <a href="" class="text-3xl font-semibold leading-6 -my-[3px] -ml-[3px]"><i
-                            class='bx bxl-instagram'></i></a>
+                    {% for link in linklists['footer-company'].links %}
+                        <a href='{{ link.url }}'>
+                            {{- link.title -}}
+                        </a>
+                    {% endfor %}
+                    <a
+                        href=''
+                        class='text-3xl font-semibold leading-6 -my-[3px] -ml-[3px]'>
+                        <i class='bx bxl-instagram'></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-
-{% comment %} <footer class="bg-[#445442] h-auto w-full flex justify-center items-center ">
-    <div class=" flex flex-col p-5 text-white">
-        <div class="">{% render 'logo-milk-denmark' %}</div>
-        <div class="pt-8 text-[12px]">&copy; {{ 'now' | date: '%Y' }} Milk DENMARK. All rights reserved.</div>
-        <div class="flex justify-between w-full">
-
-            <div class="flex flex-row space-x-6">
-                {% for link in linklists['footer'].links %}
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                {% endfor %}
-            </div>
-
-            <div class="flex justify-end w-full">
-
-                <div class="flex flex-col space-y-2 px-5">
-                    <h1>SHOP</h1>
-                    <div class="flex flex-col space-y-2">
-                        {% for link in linklists['sub-footer-menu-shop'].links %}
-                        <a href="{{ link.url }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="flex flex-col space-y-2 px-5">
-                    <h1>USERS</h1>
-                    <div class="flex flex-col space-y-2">
-                        {% for link in linklists['sub-footer-menu-users'].links %}
-                        <a href="{{ link.url }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="flex flex-col space-y-2 px-5">
-                    <h1>Company</h1>
-                    <div class="flex flex-col space-y-2">
-                        {% for link in linklists['sub-footer-menu-company'].links %}
-                        <a href="{{ link.url }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer> {% endcomment %}
