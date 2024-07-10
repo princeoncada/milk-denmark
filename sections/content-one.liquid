@@ -1,0 +1,49 @@
+<style>
+    .content-1-bg {
+        background: url({{ 'white-berry.png' | asset_img_url: '3000x3000' }});
+        background-color: #F6F0E4;
+        background-position: 50% 40%;
+        background-size: 200%;
+    }
+
+    @media (min-width: 768px) {
+        .content-1-bg {
+            background-position: 50% 68%;
+            background-size: 120%;
+        }
+    }
+    @media (min-width: 1024px) {
+        .content-1-bg {
+            background-position: 50% 68%;
+            background-size: 130%;
+        }
+    }
+</style>
+
+<section class="h-auto w-full flex justify-center items-center content-1-bg">
+    <div
+        class="absolute w-[150px] lg:w-[100px] h-[150px] md:h-[250px] bg-[#F6F0E4] left-1/3 md:left-[18%] lg:left-[14%] lg:h-[250px] xl:hidden">
+    </div>
+    <div class="flex justify-center w-full py-[173px] relative z-10 md:hidden ">{% render 'm-content-1' %}</div>
+    <div class="hidden justify-center w-full py-[240px] relative z-10 md:flex">{% render 'd-content-1' %}</div>
+</section>
+
+
+{% schema %}
+{
+"name": "Content One",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"default":"Content One",
+"label": "Title"
+}
+],
+"presets": [
+{
+"name": "Content One"
+}
+]
+}
+{% endschema %}
