@@ -1,6 +1,6 @@
 <div x-data="{ open: false }">
     <div class="md:hidden fixed bg-[#F6F0E4] flex flex-row justify-between items-center w-full py-[30px] z-50">
-        <button @click="open=!open" class="pl-[20px] flex flex-col gap-1">
+        <button @click="open=!open" class="pl-[20px] flex flex-col gap-1 relative z-30">
             <div x-bind:class="open ? 'rotate-45 translate-y-1.5' : ''"
                 class="bg-[#4F4F4F] w-5 h-0.5 transition-all ease-in-out duration-300 z-10"></div>
             <div x-bind:class="open ? 'w-0' : 'w-5'" class="bg-[#4F4F4F] h-0.5 transition-all ease-in-out duration-300">
@@ -8,7 +8,7 @@
             <div x-bind:class="open ? '-rotate-45 -translate-y-1.5' : ''"
                 class="bg-[#4F4F4F] w-5 h-0.5 transition-all ease-in-out duration-300"></div>
         </button>
-        <div class="absolute flex justify-center items-center w-full -z-10">
+        <div class="absolute flex justify-center items-center w-full z-10">
             <a class="fill-black">
                 {% render 'logo-milk-denmark' %}
             </a>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <menu x-bind:class='open ? "" : "-translate-y-[50%]"'
+    <menu x-bind:class='open ? "" : "-translate-y-[100%]"'
         class="md:hidden fixed z-0 bg-[#e7d7b6] w-full transition-all ease-in-out duration-300 translate-y-[84px] flex flex-col p-4">
         {% for link in linklists['main-menu'].links %}
             
@@ -34,7 +34,7 @@
 </div>
 
 <div
-    class="hidden fixed bg-[#F6F0E4] md:flex flex-row justify-between items-center w-full px-[104px] py-[28px] max-w-[1280px]">
+    class="hidden fixed bg-[#F6F0E4] md:flex flex-row justify-between items-center w-full px-[104px] py-[28px] max-w-[1280px] z-50">
     <div>
         <a href="/">
             {% render 'logo-milk-denmark-large' %}
