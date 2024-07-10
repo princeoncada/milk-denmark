@@ -1,4 +1,17 @@
-<section class="h-auto w-full flex justify-center items-center bg-hero-image bg-cover md:bg-center bg-[center_right_-7rem]">
+<style>
+    .hero-bg-img {
+        background: url({{ 'baby.jpg' | asset_img_url: '2400x1600' }});
+        background-position: center right -7rem;
+        background-size: cover;
+    }
+    @media (min-width: 768px) {
+        .hero-bg-img {
+            background-position: center center;
+        }
+    }
+</style>
+
+<section class="h-auto w-full flex justify-center items-center hero-bg-img">
     <div class="py-[196px] md:hidden">
         {% render 'hero-content-mobile' %}
     </div>
