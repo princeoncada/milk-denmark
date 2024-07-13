@@ -8,6 +8,10 @@ module.exports = {
 		"./snippets/*.liquid",
 	],
 	theme: {
+        backgroundSize: {
+            "full": "100%",
+            "105%": "105%",
+        },
 		extend: {
 			fontFamily: {
 				default: ["'Nanum Myeongjo', serif"],
