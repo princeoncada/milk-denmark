@@ -50,8 +50,8 @@
             </div>
         </div>
 
-        <menu x-bind:class='open ? "translate-y-[0%]" : ""'
-            class="md:hidden flex fixed -z-10 bg-[#e7d7b6] w-full -translate-y-[100%] transition-all ease-in-out duration-300 flex-col p-4">
+        <menu x-bind:class='open ? "translate-y-[0px]" : ""'
+            class="md:hidden flex fixed -z-10 bg-[#e7d7b6] w-full -translate-y-[128px] transition-all ease-in-out duration-300 flex-col p-4">
             {% for link in linklists['main-menu'].links %}
                 <a href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
