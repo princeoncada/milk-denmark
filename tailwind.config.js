@@ -14,7 +14,8 @@ module.exports = {
         },
 		extend: {
 			fontFamily: {
-				default: ["'Nanum Myeongjo', serif"],
+				nanum: ["'Nanum Myeongjo', serif"],
+                causten: ["'Causten'"],
 			},
 		},
 	},

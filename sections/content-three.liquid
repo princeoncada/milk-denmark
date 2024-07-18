@@ -1,12 +1,12 @@
 <style>
-    .content-two-bg {
+    .content-three-bg {
         background: url({{ 'content-3-image.jpeg' | asset_img_url: '3000x3000' }});
         background-size: 100%;
         background-position: 50% 50%;
     }
 
     @media (min-width: 1024px) {
-        .content-two-bg {
+        .content-three-bg {
             background-size: 100%;
             background-position: 50% 23%;
         }
@@ -14,12 +14,12 @@
 </style>
 
 <section class="w-full bg-white">
-    <div class="py-[64px] px-[25px] flex flex-col lg:flex-row gap-[40px] lg:gap-[52px] lg:p-[104px] max-w-[1280px] mx-auto">
-        <div class="content-two-bg h-[400px] min-[425px]:h-[440px] lg:h-auto lg:w-[45%] w-full rounded-2xl">
+    <div class="py-[64px] px-[25px] flex flex-col md:flex-row gap-[40px] md:gap-5 lg:gap-[56px] lg:p-[104px] max-w-[1440px] mx-auto">
+        <div class="content-three-bg h-[400px] md:h-[320px] md:w-[340px] min-[425px]:h-[440px] lg:h-[480px] lg:w-[45%] w-full rounded-2xl">
         </div>
-        <div class="flex flex-col gap-[24px] lg:w-[55%]">
+        <div class="flex flex-col justify-center gap-[24px] md:w-[360px] lg:w-[55%]">
             <div class="text-[28px] font-semibold leading-9 lg:text-[32px] lg:leading-10">
-                A deeper commitment
+                Designed with Heart
             </div>
             <div class="text-[18px] leading-6 lg:text-[28px] lg:leading-10">
                 Every MILK™ babygrow tells the story of childhood fashion, but with sketches in the place of words.
@@ -30,5 +30,6 @@
             </div>
         </div>
     </div>
-
 </section>
+
+

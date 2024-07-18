@@ -1,5 +1,5 @@
 {% comment %} mobile-view {% endcomment %}
-<footer class="bg-[#445442] text-[#F6F0E4] flex flex-col gap-16 py-16 px-6 lg:hidden">
+<footer class="bg-[#445442] text-[#F6F0E4] flex flex-col gap-16 py-16 px-6 md:hidden">
     <div>{% render 'logo-milk-footer' %}</div>
     <div class="flex flex-col gap-8">
         <div class="flex flex-row gap-10">
@@ -55,8 +55,8 @@
 
 				<a
 					href=''
-					class='text-3xl font-semibold leading-6 -my-[3px] -ml-[3px]'>
-					<i class='bx bxl-instagram'></i>
+					class='text-2xl font-semibold leading-6 '>
+					<i class="fa-brands fa-instagram"></i>
 				</a>
             </div>
         </div>
@@ -70,12 +70,12 @@
 
 {% comment %} desktop-view {% endcomment %}
 <footer class="bg-[#445442] text-[#F6F0E4]">
-    <div class="hidden flex-row lg:flex justify-between pt-[80px] pl-[104px] pb-[104px] pr-[104px] max-w-[1280px] mx-auto">
+    <div class="hidden flex-row md:flex justify-between pt-[80px] pb-[104px] px-[104px] md:px-[24px] max-w-[1440px] mx-auto">
         <div class="flex flex-col gap-8">
             <div>{% render 'logo-milk-footer' %}</div>
-            <div>
+            <div class="flex flex-col gap-4">
                 <div class="text-sm leading-5">
-                    © 2024 Milk DENMARK. All rights reserved.
+                    © 2024 Milk DENMARK. <br class="lg:hidden">All rights reserved.
                 </div>
                 <div class="flex flex-row gap-4 text-sm leading-5">
                     {% for link in linklists.footer.links %}
@@ -117,8 +117,8 @@
                     {% endfor %}
                     <a
                         href=''
-                        class='text-3xl font-semibold leading-6 -my-[3px] -ml-[3px]'>
-                        <i class='bx bxl-instagram'></i>
+                        class='text-2xl font-semibold leading-6'>
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
                 </div>
             </div>

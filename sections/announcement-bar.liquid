@@ -1,0 +1,40 @@
+<div class="bg-[#77705F] h-full lg:py-[15px]">
+    <div class="relative top-0 flex flex-col text-[#F6F0E4] bg-[#77705F] text-base items-center leading-5 z-[51]">
+        <div class="lg:absolute flex items-center h-full py-[15px] lg:py-0">
+            Get 25% off and free shipping from $100
+        </div>
+        <div class="max-w-[1440px] flex justify-between w-full px-[104px] mx-auto">
+            <div class="hidden lg:flex items-center">
+                <a href='' class='text-2xl font-semibold leading-6'>
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div class="hidden lg:flex flex-row items-center text-[16px] gap-[8px]">
+                <div x-data="{ open: false }"  @mouseover.away="open = false" class="flex flex-col font-causten w-full">
+                    <div @mouseover="open = true" class="flex flex-row gap-1 px-2 py-1">
+                        <div>
+                            EN
+                        </div>
+                        <div class="text-sm flex">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div x-bind:class="open ? 'block absolute' : 'hidden'" @mouseover="open = true" class=" top-[100%] bg-[#948b76] px-1 flex flex-col">
+                        <a href="#" class="px-1 py-1 border-b-[1px]">DN</a>
+                        <a href="#" class="px-1 py-1 border-b-[1px]">DN</a>
+                        <a href="#" class="px-1 py-1">DN</a>
+                    </div>
+                </div>
+                <div class="h-full w-0.5 bg-[#F6F0E4]"></div>
+                <div class="flex flex-row font-causten gap-1 pl-2">
+                    <div>
+                        WISHLIST
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
